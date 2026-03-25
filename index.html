@@ -1,0 +1,146 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>MobileWorld</title>
+
+<script type="text/javascript">
+function MM_preloadImages() {
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments;
+    for(i=0;i<a.length;i++)
+    if (a[i].indexOf("#")!=0){
+      d.MM_p[j]=new Image;
+      d.MM_p[j++].src=a[i];
+    }
+  }
+}
+</script>
+
+<style>
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #0c0c0c;
+    color: #fff;
+}
+
+/* Banner */
+.banner-wrapper {
+    position: relative;
+    width: 100%;
+    height: 350px;
+    overflow: hidden;
+}
+
+.banner-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.banner-overlay {
+    position: absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background: linear-gradient(to bottom right, rgba(0,0,0,0.4), rgba(0,0,0,0.7));
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+}
+
+.banner-overlay h1 {
+    font-size: 3rem;
+    color: #00B3FF;
+}
+
+.banner-overlay p {
+    font-size: 1.3rem;
+}
+
+/* DATE & TIME */
+#datetime {
+    text-align: center;
+    font-size: 34px;
+    font-weight: bold;
+    color: #00B3FF;
+    margin: 20px auto;
+    letter-spacing: 2px;
+    text-shadow: 0 0 10px rgba(0, 179, 255, 0.8),
+                 0 0 20px rgba(0, 179, 255, 0.6);
+    background: rgba(0, 0, 0, 0.5);
+    display: block;
+    padding: 15px 30px;
+    border-radius: 18px;
+    border: 2px solid #00B3FF;
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVIGATION -->
+<table width="2823" border="1">
+  <tr>
+    <td colspan="8">
+      <img src="Images/Untitled (2).png" alt="Banner" width="2838" height="256">
+    </td>
+  </tr>
+
+  <tr>
+    <td width="165"><a href="index.html"><img src="Images/button_home (4).png" alt="Home"></a></td>
+    <td width="165"><a href="Plans.html"><img src="Images/button_plans (2).png" alt="Plans"></a></td>
+    <td width="273"><a href="New Releses.html"><img src="Images/button_new-releases (2).png" alt="New Releases"></a></td>
+    <td width="211"><a href="Products.html"><img src="Images/button_products (2).png" alt="Products"></a></td>
+    <td width="250"><a href="Accessories.html"><img src="Images/button_accessories (2).png" alt="Accessories"></a></td>
+    <td width="155"><a href="Help.html"><img src="Images/button_help (2).png" alt="Help"></a></td>
+    <td width="192"><a href="Reviews.html"><img src="Images/button_reviews (4).png" alt="Reviews"></a></td>
+    <td width="1435"><a href="Contact Us.html"><img src="Images/button_contact-us (2).png" alt="Contact"></a></td>
+  </tr>
+</table>
+
+<!-- HERO -->
+<div class="banner-wrapper">
+    <img src="Images/Welcome.png" alt="Welcome">
+    <div class="banner-overlay">
+        <h1>Welcome to MobileWorld</h1>
+        <p>Explore the latest smartphones, plans, and accessories!</p>
+    </div>
+</div>
+
+<!-- REAL TIME CLOCK -->
+<div id="datetime"></div>
+
+<script>
+function updateDateTime() {
+    var now = new Date();
+
+    var day = now.getDate();
+    var month = now.getMonth() + 1;
+    var year = now.getFullYear();
+
+    var hours = now.getHours();
+    var minutes = now.getMinutes();
+    var seconds = now.getSeconds();
+
+    if (minutes < 10) minutes = "0" + minutes;
+    if (seconds < 10) seconds = "0" + seconds;
+    if (hours < 10) hours = "0" + hours;
+
+    document.getElementById("datetime").innerHTML =
+        "Date: " + day + "/" + month + "/" + year +
+        " | Time: " + hours + ":" + minutes + ":" + seconds;
+}
+
+setInterval(updateDateTime, 1000);
+updateDateTime();
+</script>
+
+</body>
+</html>
